@@ -4,11 +4,11 @@ include_once 'conexao.php';
 
 try {
 
-    $idUsuario = 34;
+    $idUsuario = 39;
     $nome = "Roberto";
-    $mail = "rober@gmail.com";
+    $mail = "roberto@gmail.com";
     // metodo preparament 
-    $rs = $con->prepare("UPDATE usuario SET nome = ?, mail = ? WHERE id = ?");
+    $rs = $conexao->prepare("UPDATE usuario SET nome = ?, mail = ? WHERE id = ?");
     $rs->bindValue(1, $nome);
     $rs->bindValue(2, $mail);
     $rs->bindValue(3, $idUsuario);

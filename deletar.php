@@ -6,7 +6,7 @@ try {
 
     $idUsuario = 33;
     // metodo preparament 
-    $rs = $con->prepare("DELETE FROM `banco_aula`.`usuario` WHERE  `id`= ?");
+    $rs = $conexao->prepare("DELETE FROM `banco_aula`.`usuario` WHERE  `id`= ?");
     $rs->bindValue(1, $idUsuario);
 
     if ($rs->execute()) {

@@ -4,7 +4,8 @@ try {
     // CONEXAO COM PDO    
     // preparação da sql
     // INSERT INTO usuario (`usuario`, `nome`, `mail`, `senha` ) values (?, ?, ?, ?);
-    $stmt = $con->prepare("INSERT INTO `usuario`(`nome`, `mail`, `senha`) VALUES(:nome,:mail, :senha)"); 
+    $stmt = $conexao->prepare("INSERT INTO `usuario`(`nome`, `mail`, `senha`)"
+            . " VALUES(:nome,:mail, :senha)"); 
            
     // valores da query
     $stmt->bindValue(':nome','Igor'); 

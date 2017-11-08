@@ -1,12 +1,16 @@
 <?php
-
+/**
+ * PHP COM PDO
+ * projetoPhp/consultar.php
+ * Prof.: Xeo
+ */
 include_once 'conexao.php';
 
 try {
     //$nome = $_POST['nome'];
     $nome = 'aluno';
     // metodo preparament 
-    $rs = $con->prepare("SELECT  id, nome, mail from usuario where nome like ?");
+    $rs = $conexao->prepare("SELECT  id, nome, mail from usuario where nome like ?");
     $rs->bindValue(1,"%" .$nome . "%");
 
 // No método fetch utilizamos um parâmetro PDO::FETCH_OBJ, este parâmetro 
