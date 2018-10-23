@@ -1,12 +1,17 @@
 <?php
-
+/**
+ * PHP COM PDO
+ * projetoPhpPDO/alterar.php
+ * Prof.: Xeo
+ */
 include_once 'conexao.php';
 
 try {
-
-    $idUsuario = 39;
-    $nome = "Roberto";
-    $mail = "roberto@gmail.com";
+    // select * from usuario where id = 3;
+    // alterar para:
+    $idUsuario = 3;
+    $nome = "yuri";
+    $mail = "yuri@gmail.com";
     // metodo preparament 
     $rs = $conexao->prepare("UPDATE usuario SET nome = ?, mail = ? WHERE id = ?");
     $rs->bindValue(1, $nome);

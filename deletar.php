@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * PHP COM PDO
+ * projetoPhp/deletar.php
+ * Prof.: Xeo
+ */
 include_once 'conexao.php';
 
 try {

@@ -8,7 +8,7 @@ include_once 'conexao.php';
 
 try {
     //$nome = $_POST['nome'];
-    $nome = 'aluno';
+    $nome = 'alin';
     // metodo preparament 
     $rs = $conexao->prepare("SELECT  id, nome, mail from usuario where nome like ?");
     $rs->bindValue(1,"%" .$nome . "%");
@@ -27,5 +27,4 @@ try {
     }
 } catch (Exception $ex) {
     print_r($ex);
-}
-?>        
+} 

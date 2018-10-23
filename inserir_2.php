@@ -1,42 +1,30 @@
 <?php
+/**
+ * PHP COM PDO
+ * projetoPhpPDO/inserir_2.php
+ * Prof.: Xeo
+ */
 include_once 'conexao.php';
 try {
     // CONEXAO COM PDO    
     // preparação da sql
-    // INSERT INTO usuario (`usuario`, `nome`, `mail`, `senha` ) values (?, ?, ?, ?);
-    $stmt = $conexao->prepare("INSERT INTO `usuario`(`nome`, `mail`, `senha`)"
-            . " VALUES(:nome,:mail, :senha)"); 
+    $stmt = $conexao->prepare("INSERT INTO `usuario`(`usuario`, `nome`, `mail`, `senha`)"
+            . " VALUES(:usuario, :nome,:mail, :senha)"); // notação para os campos
            
     // valores da query
-    $stmt->bindValue(':nome','Igor'); 
-    $stmt->bindValue(':mail','igor@gmail.com'); 
-    $stmt->bindValue(':senha',md5('12345')); 
+    $stmt->bindValue(':usuario','mateus'); 
+    $stmt->bindValue(':nome','Mateus'); 
+    $stmt->bindValue(':mail','mateusdias@gmail.com'); 
+    $stmt->bindValue(':senha',md5('12345')); // hash md5 para criptografar a senha no banco de dados
     
     // execução no banco de dado    
-    if($stmt->execute())
-        echo "Usuário inserido";
-     
-    echo $stmt->rowCount(); 
+    if ($stmt->execute() && $stmt->rowCount() > 0) {
+        echo "Novo usuário inserido com sucesso!";
+    }else{
+        echo "Erro ao inserir";
+    }
         
 } catch (Exception $ex) {
     print_r($ex);
 }
-?>
 
-
-<?php
-/*
-// lembrete sql
-INSERT INTO `usuario` (`nome`, `mail`, `senha`) 
-VALUES 
-	('Ernandes', 'atividades@infoxeo.com', '12345'),
-	('Paty', 'paty@gmail.com', Md5('12345'));
-
-*/
-?>
-
-
-
-
-
-        

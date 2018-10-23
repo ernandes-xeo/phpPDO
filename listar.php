@@ -1,4 +1,9 @@
 <?php
+/**
+ * PHP COM PDO
+ * projetoPhpPDO/listar.php
+ * Prof.: Xeo
+ */
 include_once 'conexao.php';
 try {
     
@@ -11,16 +16,11 @@ try {
     // O PDO::FETCH_OBJ trata cada linha da consulta como um objeto, 
     // transformando os campos que foram retornados em atributos do objeto $row.
     while($row = $rs->fetch(PDO::FETCH_OBJ)){
-  
-        echo "<a href='recebedados.php?id=".$row->id.">Exibir</a> - " . $row->nome ." - " .  $row->mail . "<br >";
+        // criar o aquivo recebedados.php
+        echo "<a href='recebedados.php?id=".$row->id ."'>Exibir</a> ". $row->nome ." - " . $row->mail ."<br >";
         
     }
-    
-    
-    
     
 } catch (Exception $ex) {
     print_r($ex);
 }
-
-?>        
