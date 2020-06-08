@@ -4,16 +4,16 @@
  * projetoPhpPDO/inserir.php
  * Prof.: Xeo
  */
+//phpinfo();
 include_once 'conexao.php';
 try {
     // CONEXAO COM PDO
     // preparação da sql
-    $stmt = $conexao->prepare("INSERT INTO usuario (`usuario`, `nome`, `mail`, `senha` ) "
-                               . "values (?, ?, ?, ?)");
+    $stmt = $conexao->prepare("INSERT INTO usuario (`usuario`, `nome`, `mail`, `senha` ) values (?, ?, ?, ?)");
     // valores da query
-    $stmt->bindValue(1, 'aline');
-    $stmt->bindValue(2, 'Aline');
-    $stmt->bindValue(3, 'alinel@gmail.com');
+    $stmt->bindValue(1, 'kely');
+    $stmt->bindValue(2, 'kely');
+    $stmt->bindValue(3, 'kely.com');
     $stmt->bindValue(4, md5('12345'));
 
     // execução no banco de dado    

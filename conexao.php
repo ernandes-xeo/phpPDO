@@ -4,6 +4,9 @@
  * projetoPhpPDO/conexao.php
  * Prof.: Xeo
  */
+
+//phpinfo()
+
 $host = 'localhost';
 $banco = 'banco_aula'; // nome do seu banco
 $user = 'root'; // usuário mysql
@@ -15,6 +18,26 @@ try{
 } catch (PDOException $e) {
     //print_r($e);
     echo $e->getMessage();
+}
+
+$aluno = array();
+$aluno[0] = $_POST['nome'];
+$aluno[1] = $_POST['sobrenome'];
+$aluno[2] = $_POST['curso'];
+
+function conectar($conexao, $aluno){
+    $stmt = $conexao;
+    $stmt->prepare("sql");
+    $stmt->execute();
+}
+
+
+function alterar(){
+    
+}
+
+function salvar(){
+    
 }
 
 
