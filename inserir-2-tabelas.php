@@ -10,9 +10,9 @@ try {
     $stmt = $conexao->prepare("INSERT INTO `usuario`(`usuario`,`nome`, `mail`, `senha`) VALUES(:usuario,:nome,:mail, :senha)");
 
     // valores da query
-    $stmt->bindValue(':usuario', 'kely');
-    $stmt->bindValue(':nome', 'Kely Xeo');
-    $stmt->bindValue(':mail', 'kely@gmail.com');
+    $stmt->bindValue(':usuario', 'ernandesxeo');
+    $stmt->bindValue(':nome', 'Ernandes Xeo');
+    $stmt->bindValue(':mail', 'ernandesxeo@gmail.com');
     $stmt->bindValue(':senha', md5('12345'));
 
     // execução no banco de dado    
@@ -20,7 +20,7 @@ try {
         // Segunda query
         $prepare = $conexao->prepare("INSERT INTO permissoes (cod_usuario, permissao, `status`) values (:cod_usuario, :permissao, :status)");
         $prepare->bindValue(':cod_usuario', $conexao->lastInsertId());
-        $prepare->bindValue(':permissao', 5);
+        $prepare->bindValue(':permissao','Admin');
         $prepare->bindValue(':status', 1);
         if ($prepare->execute()) {
             echo "Permissões gravadas";
@@ -36,6 +36,3 @@ try {
 ?>
 <?php
 #select u.id, u.nome, u.mail, p.permissao, p.cod_usuario from usuario as u inner join permissoes as p on u.id = p.cod_usuario
-
-
-

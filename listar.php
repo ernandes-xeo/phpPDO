@@ -8,7 +8,7 @@ include_once 'conexao.php';
 try {
     
     // listar usuários banco método query
-    $rs = $conexao->query("SELECT  id, nome, mail, senha from usuario id = 5");
+    $rs = $conexao->query("SELECT  id, nome, mail, senha from usuario");
     
     // No método fetch utilizamos um parâmetro PDO::FETCH_OBJ, este parâmetro 
     // define a forma na qual os dados serão retornados e armazenados na variável 
@@ -16,12 +16,10 @@ try {
     // O PDO::FETCH_OBJ trata cada linha da consulta como um objeto, 
     // transformando os campos que foram retornados em atributos do objeto $row.
     
-    session_start(); 
-    
+   
     while($row = $rs->fetch(PDO::FETCH_OBJ)){
         
         //var_dump($row->senha);
-        $_SESSION['usuario'] = $row;
         // criar o aquivo recebedados.php
         echo "<a href='recebedados.php?id=".$row->id ."'>Exibir</a> ". $row->nome ." - " . $row->mail ."<br >";
         echo "<br /><a href='recebedados.php?editar=".$row->id ."'>Editar</a> ";

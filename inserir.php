@@ -13,7 +13,7 @@ try {
     // valores da query
     $stmt->bindValue(1, 'kely');
     $stmt->bindValue(2, 'kely');
-    $stmt->bindValue(3, 'kely.com');
+    $stmt->bindValue(3, 'kely@gmail.com');
     $stmt->bindValue(4, md5('12345'));
 
     // execução no banco de dado    
