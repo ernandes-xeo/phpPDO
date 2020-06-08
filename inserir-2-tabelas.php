@@ -10,9 +10,9 @@ try {
     $stmt = $conexao->prepare("INSERT INTO `usuario`(`usuario`,`nome`, `mail`, `senha`) VALUES(:usuario,:nome,:mail, :senha)");
 
     // valores da query
-    $stmt->bindValue(':usuario', 'paty');
-    $stmt->bindValue(':nome', 'Patricia');
-    $stmt->bindValue(':mail', 'patricia@gmail.com');
+    $stmt->bindValue(':usuario', 'kely');
+    $stmt->bindValue(':nome', 'Kely Xeo');
+    $stmt->bindValue(':mail', 'kely@gmail.com');
     $stmt->bindValue(':senha', md5('12345'));
 
     // execução no banco de dado    

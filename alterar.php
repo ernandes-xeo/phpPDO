@@ -10,8 +10,8 @@ try {
     // select * from usuario where id = 3;
     // alterar para:
     $idUsuario = 3;
-    $nome = "yuri";
-    $mail = "yuri@gmail.com";
+    $nome = "João";
+    $mail = "joao@gmail.com";
     // metodo preparament 
     $rs = $conexao->prepare("UPDATE usuario SET nome = ?, mail = ? WHERE id = ?");
     $rs->bindValue(1, $nome);

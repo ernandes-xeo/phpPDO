@@ -8,7 +8,7 @@ include_once 'conexao.php';
 
 try {
 
-    $idUsuario = 33;
+    $idUsuario = 5;
     // metodo preparament 
     $rs = $conexao->prepare("DELETE FROM `banco_aula`.`usuario` WHERE  `id`= ?");
     $rs->bindValue(1, $idUsuario);
